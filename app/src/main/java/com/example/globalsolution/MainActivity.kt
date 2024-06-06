@@ -30,22 +30,16 @@ class MainActivity : ComponentActivity() {
         recyclerView.adapter = projetoPraia
 
         btnIncluir.setOnClickListener {
-            val name = nomePraia.text.toString().trim()
-            val city = nomeCidade.text.toString().trim()
-            val state = nomeEstado.text.toString().trim()
+            val nome = nomePraia.text.toString().trim()
+            val cidade = nomeCidade.text.toString().trim()
+            val estado = nomeEstado.text.toString().trim()
 
-            if (name.isEmpty() || city.isEmpty() || state.isEmpty()) {
-                Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
-            } else if (name.length < 3 || city.length < 3 || state.length < 2) {
-                Toast.makeText(this, "Verifique os tamanhos mínimos dos campos", Toast.LENGTH_SHORT).show()
-            } else {
-                val beach = Beach(name, city, state)
-                beachList.add(beach)
-                beachAdapter.notifyDataSetChanged()
-                etBeachName.text.clear()
-                etCity.text.clear()
-                etState.text.clear()
-            }
+            val retornoPraia = Praia(nome, cidade, estado)
+            listaPraias.add(retornoPraia)
+            //ProjetoPraia.notifyDataSetChanged()
+            nomePraia.text.clear()
+            nomeCidade.text.clear()
+            nomeEstado.text.clear()
         }
     }
 }
