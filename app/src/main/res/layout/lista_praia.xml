@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Nome da Praia"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="16sp"/>
 
     <TextView
@@ -21,6 +22,7 @@
         android:text="Cidade"
         android:layout_marginTop="16dp"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="14sp"/>
 
     <TextView
@@ -30,6 +32,7 @@
         android:text="Estado"
         android:layout_marginTop="10dp"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="14sp"/>
 
     <Button

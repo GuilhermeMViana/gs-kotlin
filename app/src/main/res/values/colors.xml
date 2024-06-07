@@ -2,4 +2,5 @@
 <resources>
     <color name="primary">#09AAC7</color>
     <color name="secondary">#484848</color>
+    <color name="black">#000000</color>
 </resources>
