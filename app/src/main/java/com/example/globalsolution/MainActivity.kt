@@ -21,8 +21,8 @@ class MainActivity : ComponentActivity() {
         val nomeEstado: EditText = findViewById(R.id.nomeEstado)
         val btnIncluir: Button = findViewById(R.id.btnIncluir)
 
-        projetoPraia = ProjetoPraia(listaPraias) { beach ->
-            listaPraias.remove(beach)
+        projetoPraia = ProjetoPraia(listaPraias) { praia ->
+            listaPraias.remove(praia)
             projetoPraia.notifyDataSetChanged()
         }
 
@@ -34,12 +34,14 @@ class MainActivity : ComponentActivity() {
             val cidade = nomeCidade.text.toString().trim()
             val estado = nomeEstado.text.toString().trim()
 
-            val retornoPraia = Praia(nome, cidade, estado)
-            listaPraias.add(retornoPraia)
-            //ProjetoPraia.notifyDataSetChanged()
-            nomePraia.text.clear()
-            nomeCidade.text.clear()
-            nomeEstado.text.clear()
+            if (nome.isNotEmpty() && cidade.isNotEmpty() && estado.isNotEmpty()) {
+                val novaPraia = Praia(nome, cidade, estado)
+                listaPraias.add(novaPraia)
+                projetoPraia.notifyDataSetChanged()
+                nomePraia.text.clear()
+                nomeCidade.text.clear()
+                nomeEstado.text.clear()
+            }
         }
     }
 }
